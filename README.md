@@ -1,7 +1,7 @@
 # RADIUS
 The purpose of this repository is to explain how to create and configure a RADIUS WI-FI authentication server on Active Directory
 
-# ADD ROLES AND FEATURES
+# Add AD DS
 1. Click on Add new roles and features
 2. Next
 3. Installation type > Role-based or featured based installation > Next
@@ -51,4 +51,23 @@ The purpose of this repository is to explain how to create and configure a RADIU
 10. On the user Properties > Dial in > Allow Access in Network Access permission
 
 # Network policy Server configuration
-On the Server tab > Right click > Network policy Server
+1. On the Server tab > Right click > Network policy Server
+2. Standard Configuration > RADIUS server for 802.1x Wireless or Wired Connections
+3. Configure 802.1x
+4. Select Secure Wireless connections
+5. RADIUS Clients > Add
+6. Add a Name, Address: 192.168.0.250 and Shared secret (password)
+7. Next
+8. Select Protected EAP(PEAP)
+9. Specify User Groups > Add > Enter the object name to select (the group name previously created)
+10. Next
+11. "You have successfuly created the following policies and configured the following RADIUS clients" > Finish
+12. Go to Network and Sharing Center > Ethernet > Properties > Select "Internet Protocol Version 4" > Properties
+13. Preferred DNS Server: 192.168.0.252
+
+# Configuring the Access Point
+1. Open Internet Explorer and type the address used to configure your Access Point
+2. Add the address to Trusted Sites
+3. On LAN settings change the IP address to 192.168.0.250
+4. On Wireless security settings switch to WPA2 Enterprise and add the RADIUS IP Server: 192.168.0.252 > then set a RADIUS password (has to be the same used for "Shared secret")
+5. Save and reboot the device
