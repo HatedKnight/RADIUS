@@ -1,5 +1,5 @@
 # RADIUS
-The purpose of this repository is to explain how to create and configure a RADIUS WI-FI authentication server on Active Directory
+The purpose of this repository is to give a step by step process on how to create and configure a RADIUS WI-FI authentication server on Active Directory
 
 # Add AD DS
 1. Click on Add new roles and features
